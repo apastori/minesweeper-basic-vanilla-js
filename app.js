@@ -21,9 +21,9 @@ function mineSweeperApp() {
     const emptyCellArray = new Array(Math.pow(width, 2) - bombAmount);
     emptyCellArray.fill("valid");
     const gameArray = emptyCellArray.concat(bombArray);
-    console.log(gameArray);
+    //console.log(gameArray);
     const gameArrayShuffled = shuffle(gameArray);
-    console.log(gameArrayShuffled);
+    //console.log(gameArrayShuffled);
     // Create Board MineSweeper
     function createBoard() {
         flagsLeft.innerHTML = bombAmount;
@@ -39,9 +39,12 @@ function mineSweeperApp() {
                 clickSquare(square);
             });
             //Control and Left Click
-            square.addEventListener("contextmenu", (e) => {
+            //square.addEventListener("contextmenu", (e) => {
+            square.oncontextmenu = function() {
+                console.log("contextMenuEvent");
+                //e.preventDefault();
                 addFlagSquare(square);
-            })
+            }
         }
         for (let i = 0; i < squares.length; i++) {
             let total = 0;
@@ -154,8 +157,10 @@ function mineSweeperApp() {
 
     function addFlagSquare(square) {
         if (isGameOver) return;
+        const squareIsFlag = square.classList.contains('flag');
+        if (squareIsFlag) return; 
         const squareIsChecked = square.classList.contains('checked');
-        const lessFlagsThanBombs = (flags < bombAmount);
+        const lessFlagsThanBombs = (flagAmount < bombAmount);
         if (!squareIsChecked && lessFlagsThanBombs) {
             square.classList.add("flag");
             flagAmount++;
