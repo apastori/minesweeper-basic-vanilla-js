@@ -39,6 +39,11 @@ div {
     */
 }
 
+.gridElement {
+    align-items: center;
+    justify-content: center;
+}
+
 .gridElement.valid {
     width: 40px;
     height: 40px;
@@ -54,3 +59,45 @@ div {
     border-color: #f5f3eb #bab7a9 #bab7a9 #fff9db;
     box-sizing: border-box;
 }
+
+.gridElement.checked {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #9c998d;
+    box-sizing: border-box; //This makes emoji not centered
+}
+
+.gridElement.one {
+    color: #e76346;
+}
+
+.gridElement.two {
+    color: #4199d3;
+}
+
+.gridElement.three {
+    color: #57da59;
+}
+
+.gridElement.four {
+    color: #bb41d3;
+}
+
+.gridElement.five {
+    color: #bb41d3;
+}
+
+.gridElement.six {
+    color: #bb41d3;
+}
+
+.gridElement.seven {
+    color: #bb41d3;
+}
+
+.gridElement.eight {
+    color: #bb41d3;;
+}
+
+
+
