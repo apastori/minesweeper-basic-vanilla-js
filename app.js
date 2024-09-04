@@ -193,7 +193,7 @@ function mineSweeperApp() {
     }
 
     function gameOver() {
-        result.innerHTML = "Boom! Game Over";
+        result.innerHTML = "Boom!💣💣💣Game Over";
         isGameOver = true;
         // Show all the bombs
         squares.forEach((square) => {
